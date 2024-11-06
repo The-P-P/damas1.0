@@ -1,7 +1,11 @@
-// App.tsx
 import React from 'react';
-import AppNavigator from '../damas/components/navigation/AppNavigator'
+import { NavigationContainer } from '@react-navigation/native';
+import AppNavigator from '../damas/components/navigation/AppNavigator';
 
 export default function App() {
-  return <AppNavigator />;
+  return (
+    <NavigationContainer>
+      <AppNavigator />
+    </NavigationContainer>
+  );
 }

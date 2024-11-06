@@ -30,9 +30,12 @@ const LoginScreen = () => {
         </TouchableOpacity>
       </View>
 
-      <TouchableOpacity style={styles.loginButton}>
-        <Text style={styles.loginButtonText}>ENTRAR</Text>
-      </TouchableOpacity>
+      <TouchableOpacity
+      style={styles.loginButton}
+      onPress={() => navigation.navigate('main')}
+    >
+      <Text style={styles.loginButtonText}>ENTRAR</Text>
+    </TouchableOpacity>
 
       <Text style={styles.orText}>Entrar com</Text>
 
@@ -52,7 +55,7 @@ const LoginScreen = () => {
         title="Registre-se!"
         onPress={() => {
           console.log('Botão de registro pressionado');
-          navigation.navigate('SignUp');
+          navigation.navigate('explore');
         }}
         />
       </View>
