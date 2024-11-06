@@ -1,102 +1,121 @@
-import Ionicons from '@expo/vector-icons/Ionicons';
-import { StyleSheet, Image, Platform } from 'react-native';
+import React from 'react';
+import { View, Text, TextInput, TouchableOpacity, StyleSheet, ScrollView } from 'react-native';
+import { MaterialIcons } from '@expo/vector-icons';
 
-import { Collapsible } from '@/components/Collapsible';
-import { ExternalLink } from '@/components/ExternalLink';
-import ParallaxScrollView from '@/components/ParallaxScrollView';
-import { ThemedText } from '@/components/ThemedText';
-import { ThemedView } from '@/components/ThemedView';
-
-export default function TabTwoScreen() {
+const SignUpScreen = () => {
   return (
-    <ParallaxScrollView
-      headerBackgroundColor={{ light: '#D0D0D0', dark: '#353636' }}
-      headerImage={<Ionicons size={310} name="code-slash" style={styles.headerImage} />}>
-      <ThemedView style={styles.titleContainer}>
-        <ThemedText type="title">Explore</ThemedText>
-      </ThemedView>
-      <ThemedText>This app includes example code to help you get started.</ThemedText>
-      <Collapsible title="File-based routing">
-        <ThemedText>
-          This app has two screens:{' '}
-          <ThemedText type="defaultSemiBold">app/(tabs)/index.tsx</ThemedText> and{' '}
-          <ThemedText type="defaultSemiBold">app/(tabs)/explore.tsx</ThemedText>
-        </ThemedText>
-        <ThemedText>
-          The layout file in <ThemedText type="defaultSemiBold">app/(tabs)/_layout.tsx</ThemedText>{' '}
-          sets up the tab navigator.
-        </ThemedText>
-        <ExternalLink href="https://docs.expo.dev/router/introduction">
-          <ThemedText type="link">Learn more</ThemedText>
-        </ExternalLink>
-      </Collapsible>
-      <Collapsible title="Android, iOS, and web support">
-        <ThemedText>
-          You can open this project on Android, iOS, and the web. To open the web version, press{' '}
-          <ThemedText type="defaultSemiBold">w</ThemedText> in the terminal running this project.
-        </ThemedText>
-      </Collapsible>
-      <Collapsible title="Images">
-        <ThemedText>
-          For static images, you can use the <ThemedText type="defaultSemiBold">@2x</ThemedText> and{' '}
-          <ThemedText type="defaultSemiBold">@3x</ThemedText> suffixes to provide files for
-          different screen densities
-        </ThemedText>
-        <Image source={require('@/assets/images/react-logo.png')} style={{ alignSelf: 'center' }} />
-        <ExternalLink href="https://reactnative.dev/docs/images">
-          <ThemedText type="link">Learn more</ThemedText>
-        </ExternalLink>
-      </Collapsible>
-      <Collapsible title="Custom fonts">
-        <ThemedText>
-          Open <ThemedText type="defaultSemiBold">app/_layout.tsx</ThemedText> to see how to load{' '}
-          <ThemedText style={{ fontFamily: 'SpaceMono' }}>
-            custom fonts such as this one.
-          </ThemedText>
-        </ThemedText>
-        <ExternalLink href="https://docs.expo.dev/versions/latest/sdk/font">
-          <ThemedText type="link">Learn more</ThemedText>
-        </ExternalLink>
-      </Collapsible>
-      <Collapsible title="Light and dark mode components">
-        <ThemedText>
-          This template has light and dark mode support. The{' '}
-          <ThemedText type="defaultSemiBold">useColorScheme()</ThemedText> hook lets you inspect
-          what the user's current color scheme is, and so you can adjust UI colors accordingly.
-        </ThemedText>
-        <ExternalLink href="https://docs.expo.dev/develop/user-interface/color-themes/">
-          <ThemedText type="link">Learn more</ThemedText>
-        </ExternalLink>
-      </Collapsible>
-      <Collapsible title="Animations">
-        <ThemedText>
-          This template includes an example of an animated component. The{' '}
-          <ThemedText type="defaultSemiBold">components/HelloWave.tsx</ThemedText> component uses
-          the powerful <ThemedText type="defaultSemiBold">react-native-reanimated</ThemedText> library
-          to create a waving hand animation.
-        </ThemedText>
-        {Platform.select({
-          ios: (
-            <ThemedText>
-              The <ThemedText type="defaultSemiBold">components/ParallaxScrollView.tsx</ThemedText>{' '}
-              component provides a parallax effect for the header image.
-            </ThemedText>
-          ),
-        })}
-      </Collapsible>
-    </ParallaxScrollView>
+    <ScrollView contentContainerStyle={styles.container}>
+      <Text style={styles.title}>Crie sua conta!</Text>
+
+      <View style={styles.inputContainer}>
+        <MaterialIcons name="person" size={20} color="#9E9E9E" />
+        <TextInput placeholder="Nome completo" style={styles.input} />
+      </View>
+
+      <View style={styles.inputContainer}>
+        <MaterialIcons name="calendar-today" size={20} color="#9E9E9E" />
+        <TextInput placeholder="Data de Nascimento" style={styles.input} />
+      </View>
+
+      <View style={styles.inputContainer}>
+        <MaterialIcons name="email" size={20} color="#9E9E9E" />
+        <TextInput placeholder="E-mail" style={styles.input} />
+      </View>
+
+      <View style={styles.inputContainer}>
+        <MaterialIcons name="phone" size={20} color="#9E9E9E" />
+        <TextInput placeholder="Telefone" style={styles.input} />
+      </View>
+
+      <View style={styles.inputContainer}>
+        <MaterialIcons name="fingerprint" size={20} color="#9E9E9E" />
+        <TextInput placeholder="CPF" style={styles.input} />
+      </View>
+
+      <View style={styles.inputContainer}>
+        <MaterialIcons name="location-city" size={20} color="#9E9E9E" />
+        <TextInput placeholder="Cidade Natal" style={styles.input} />
+      </View>
+
+      <View style={styles.inputContainer}>
+        <MaterialIcons name="location-on" size={20} color="#9E9E9E" />
+        <TextInput placeholder="Cidade de Residência" style={styles.input} />
+      </View>
+
+      <View style={styles.inputContainer}>
+        <MaterialIcons name="lock" size={20} color="#9E9E9E" />
+        <TextInput placeholder="Crie uma senha" style={styles.input} secureTextEntry />
+        <MaterialIcons name="visibility" size={20} color="#9E9E9E" />
+      </View>
+
+      <View style={styles.inputContainer}>
+        <MaterialIcons name="lock" size={20} color="#9E9E9E" />
+        <TextInput placeholder="Confirme sua senha" style={styles.input} secureTextEntry />
+        <MaterialIcons name="visibility" size={20} color="#9E9E9E" />
+      </View>
+
+      <Text style={styles.passwordCriteria}>
+        *Sua nova senha deve conter:
+        {"\n"}• De 8 a 15 caracteres;
+        {"\n"}• Pelo menos 1 letra maiúscula;
+        {"\n"}• Pelo menos 1 letra minúscula;
+        {"\n"}• Pelo menos 1 número;
+        {"\n"}• Pelo menos 1 símbolo/caractere especial;
+      </Text>
+
+      <TouchableOpacity style={styles.button}>
+        <Text style={styles.buttonText}>CADASTRAR</Text>
+      </TouchableOpacity>
+    </ScrollView>
   );
-}
+};
 
 const styles = StyleSheet.create({
-  headerImage: {
-    color: '#808080',
-    bottom: -90,
-    left: -35,
-    position: 'absolute',
+  container: {
+    flexGrow: 1,
+    alignItems: 'center',
+    padding: 20,
+    backgroundColor: '#F8F8F8',
   },
-  titleContainer: {
+  title: {
+    fontSize: 24,
+    fontWeight: 'bold',
+    marginVertical: 20,
+  },
+  inputContainer: {
     flexDirection: 'row',
-    gap: 8,
+    alignItems: 'center',
+    backgroundColor: '#E0E0E0',
+    borderRadius: 8,
+    paddingHorizontal: 10,
+    marginVertical: 8,
+    width: '100%',
+    height: 50,
+  },
+  input: {
+    flex: 1,
+    paddingHorizontal: 10,
+  },
+  passwordCriteria: {
+    fontSize: 12,
+    color: '#B71C1C',
+    marginVertical: 10,
+    textAlign: 'left',
+    width: '100%',
+  },
+  button: {
+    backgroundColor: '#0D47A1',
+    borderRadius: 8,
+    paddingVertical: 15,
+    alignItems: 'center',
+    width: '100%',
+    marginTop: 20,
+  },
+  buttonText: {
+    color: '#FFF',
+    fontWeight: 'bold',
+    fontSize: 16,
   },
 });
+
+export default SignUpScreen;

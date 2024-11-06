@@ -1,70 +1,165 @@
-import { Image, StyleSheet, Platform } from 'react-native';
+import React from 'react';
+import { View, Text, TextInput, TouchableOpacity, StyleSheet, Image, Button} from 'react-native';
+import { useNavigation } from '@react-navigation/native';
+import { StackNavigationProp } from '@react-navigation/stack';
 
-import { HelloWave } from '@/components/HelloWave';
-import ParallaxScrollView from '@/components/ParallaxScrollView';
-import { ThemedText } from '@/components/ThemedText';
-import { ThemedView } from '@/components/ThemedView';
+type RootStackParamList = {
+  Login: undefined;
+  SignUp: undefined;
+};
 
-export default function HomeScreen() {
+type LoginScreenNavigationProp = StackNavigationProp<RootStackParamList, 'Login'>;
+const LoginScreen = () => {
+  const navigation = useNavigation<LoginScreenNavigationProp>();
   return (
-    <ParallaxScrollView
-      headerBackgroundColor={{ light: '#A1CEDC', dark: '#1D3D47' }}
-      headerImage={
-        <Image
-          source={require('@/assets/images/partial-react-logo.png')}
-          style={styles.reactLogo}
+    <View style={styles.container}>
+      {/* Espaço para a logo */}
+      <Image
+        source={require('../../assets/images/logo.png')}  // Substitua pelo caminho correto do seu logo
+        style={styles.logo}
+      />
+      <Text style={styles.title}>FMJD</Text>
+      <Text style={styles.subtitle}>Federação Maranhense de Jogos de Damas</Text>
+
+      <View style={styles.inputContainer}>
+        <TextInput style={styles.input} placeholder="E-mail" keyboardType="email-address" />
+        <TextInput style={styles.input} placeholder="Senha" secureTextEntry />
+        <TouchableOpacity>
+          <Text style={styles.forgotPassword}>Esqueceu a sua senha?</Text>
+        </TouchableOpacity>
+      </View>
+
+      <TouchableOpacity style={styles.loginButton}>
+        <Text style={styles.loginButtonText}>ENTRAR</Text>
+      </TouchableOpacity>
+
+      <Text style={styles.orText}>Entrar com</Text>
+
+      <TouchableOpacity style={styles.socialButtonGoogle}>
+        <Text style={styles.socialButtonText}>Entrar com o Google</Text>
+      </TouchableOpacity>
+      <TouchableOpacity style={styles.socialButtonFacebook}>
+        <Text style={styles.socialButtonText}>Entrar com o Facebook</Text>
+      </TouchableOpacity>
+      <TouchableOpacity style={styles.socialButtonApple}>
+        <Text style={styles.socialButtonText}>Entrar com a Apple</Text>
+      </TouchableOpacity>
+
+      <View style={styles.registerContainer}>
+        <Text style={styles.registerText}>Não tem uma conta? </Text>
+        <Button
+        title="Registre-se!"
+        onPress={() => {
+          console.log('Botão de registro pressionado');
+          navigation.navigate('SignUp');
+        }}
         />
-      }>
-      <ThemedView style={styles.titleContainer}>
-        <ThemedText type="title">Welcome!</ThemedText>
-        <HelloWave />
-      </ThemedView>
-      <ThemedView style={styles.stepContainer}>
-        <ThemedText type="subtitle">Step 1: Try it</ThemedText>
-        <ThemedText>
-          Edit <ThemedText type="defaultSemiBold">app/(tabs)/index.tsx</ThemedText> to see changes.
-          Press{' '}
-          <ThemedText type="defaultSemiBold">
-            {Platform.select({ ios: 'cmd + d', android: 'cmd + m' })}
-          </ThemedText>{' '}
-          to open developer tools.
-        </ThemedText>
-      </ThemedView>
-      <ThemedView style={styles.stepContainer}>
-        <ThemedText type="subtitle">Step 2: Explore</ThemedText>
-        <ThemedText>
-          Tap the Explore tab to learn more about what's included in this starter app.
-        </ThemedText>
-      </ThemedView>
-      <ThemedView style={styles.stepContainer}>
-        <ThemedText type="subtitle">Step 3: Get a fresh start</ThemedText>
-        <ThemedText>
-          When you're ready, run{' '}
-          <ThemedText type="defaultSemiBold">npm run reset-project</ThemedText> to get a fresh{' '}
-          <ThemedText type="defaultSemiBold">app</ThemedText> directory. This will move the current{' '}
-          <ThemedText type="defaultSemiBold">app</ThemedText> to{' '}
-          <ThemedText type="defaultSemiBold">app-example</ThemedText>.
-        </ThemedText>
-      </ThemedView>
-    </ParallaxScrollView>
+      </View>
+    </View>
   );
-}
+};
 
 const styles = StyleSheet.create({
-  titleContainer: {
-    flexDirection: 'row',
+  container: {
+    flex: 1,
+    padding: 20,
+    backgroundColor: '#001f54',  // Fundo azul escuro
     alignItems: 'center',
-    gap: 8,
   },
-  stepContainer: {
-    gap: 8,
-    marginBottom: 8,
+  logo: {
+    width: 80,
+    height: 80,
+    marginBottom: 10,
+    // Substitua o caminho da logo acima para exibir a imagem correta
   },
-  reactLogo: {
-    height: 178,
-    width: 290,
-    bottom: 0,
-    left: 0,
-    position: 'absolute',
+  title: {
+    fontSize: 28,
+    fontWeight: 'bold',
+    color: '#FFFFFF',
+    marginTop: 10,
+  },
+  subtitle: {
+    fontSize: 14,
+    color: '#FFFFFF',
+    marginBottom: 30,
+  },
+  inputContainer: {
+    width: '100%',
+    backgroundColor: '#FFFFFF',
+    padding: 15,
+    borderRadius: 10,
+    marginBottom: 15,
+    alignItems: 'center',
+  },
+  input: {
+    backgroundColor: '#f2f2f2',
+    padding: 15,
+    borderRadius: 10,
+    marginBottom: 15,
+    width: '100%',
+  },
+  forgotPassword: {
+    color: '#001f54',
+    fontSize: 12,
+    textAlign: 'right',
+    width: '100%',
+  },
+  loginButton: {
+    backgroundColor: '#00008B',  // Azul escuro
+    padding: 15,
+    borderRadius: 10,
+    alignItems: 'center',
+    width: '100%',
+    marginTop: 15,
+  },
+  loginButtonText: {
+    color: '#FFFFFF',
+    fontWeight: 'bold',
+  },
+  orText: {
+    fontSize: 14,
+    color: '#FFFFFF',
+    marginVertical: 20,
+  },
+  socialButtonGoogle: {
+    backgroundColor: '#DB4437',  // Cor do Google
+    padding: 15,
+    borderRadius: 10,
+    alignItems: 'center',
+    width: '100%',
+    marginBottom: 10,
+  },
+  socialButtonFacebook: {
+    backgroundColor: '#4267B2',  // Cor do Facebook
+    padding: 15,
+    borderRadius: 10,
+    alignItems: 'center',
+    width: '100%',
+    marginBottom: 10,
+  },
+  socialButtonApple: {
+    backgroundColor: '#333333',  // Cor da Apple (preto)
+    padding: 15,
+    borderRadius: 10,
+    alignItems: 'center',
+    width: '100%',
+    marginBottom: 20,
+  },
+  socialButtonText: {
+    color: '#FFFFFF',
+    fontWeight: 'bold',
+  },
+  registerContainer: {
+    flexDirection: 'row',
+    marginTop: 10,
+  },
+  registerText: {
+    color: '#FFFFFF',
+  },
+  registerLink: {
+    color: 'red',
+    fontWeight: 'bold',
   },
 });
+
+export default LoginScreen;
