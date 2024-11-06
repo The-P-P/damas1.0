@@ -7,19 +7,19 @@ import explore from '../../app/(tabs)/explore'; // Importação da tela de cadas
 import main from '../../app/(tabs)/main'
 import news from '../../app/(tabs)/news'
 import RankingScreen from '../../app/(tabs)/RankingScreen';
-import TorneiosScreen from '../../app/(tabs)/TournamentsScreen';
-import AulasParticularesScreen from '../../app/(tabs)/PrivateLessonsScreen';
-import BibliotecaDigitalScreen from '../../app/(tabs)/DigitalLibraryScreen';
-import SobreScreen from '../../app/(tabs)/AboutScreen';
-import PagamentosScreen from '../../app/(tabs)/PaymentsScreen';
-import MinhaContaScreen from '../../app/(tabs)/MyAccountScreen';
+import TournamentsScreen from '../../app/(tabs)/TournamentsScreen';
+import PrivateLessonsScreen from '../../app/(tabs)/PrivateLessonsScreen';
+import DigitalLibraryScreen from '../../app/(tabs)/DigitalLibraryScreen';
+import AboutScreen from '../../app/(tabs)/AboutScreen';
+import PaymentsScreen from '../../app/(tabs)/PaymentsScreen';
+import MyAccountScreen from '../../app/(tabs)/MyAccountScreen';
 
 const Stack = createStackNavigator();
 
 const AppNavigator = () => {
   return (
     <NavigationContainer>
-      <Stack.Navigator initialRouteName="index">
+      <Stack.Navigator initialRouteName="main">
       <Stack.Screen
         name="explore"
         component={explore}
@@ -42,38 +42,38 @@ const AppNavigator = () => {
         />
 
         <Stack.Screen
-          name="Ranking"
+          name="RankingScreen"
           component={RankingScreen}
           options={{ headerShown: false }}
         />
         <Stack.Screen
-          name="Torneios"
-          component={TorneiosScreen}
+          name="TournamentsScreen"
+          component={TournamentsScreen}
           options={{ headerShown: false }}
         />
         <Stack.Screen
-          name="AulasParticulares"
-          component={AulasParticularesScreen}
+          name="PrivateLessonsScreen"
+          component={PrivateLessonsScreen}
           options={{ headerShown: false }}
         />
         <Stack.Screen
-          name="BibliotecaDigital"
-          component={BibliotecaDigitalScreen}
+          name="DigitalLibraryScreen"
+          component={DigitalLibraryScreen}
           options={{ headerShown: false }}
         />
         <Stack.Screen
-          name="Sobre"
-          component={SobreScreen}
+          name="AboutScreen"
+          component={AboutScreen}
           options={{ headerShown: false }}
         />
         <Stack.Screen
-          name="Pagamentos"
-          component={PagamentosScreen}
+          name="PaymentsScreen"
+          component={PaymentsScreen}
           options={{ headerShown: false }}
         />
         <Stack.Screen
-          name="MinhaConta"
-          component={MinhaContaScreen}
+          name="MyAccountScreen"
+          component={MyAccountScreen}
           options={{ headerShown: false }}
         />
       </Stack.Navigator>

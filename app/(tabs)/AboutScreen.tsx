@@ -26,7 +26,7 @@ const AboutScreen = () => {
 
       <View style={styles.infoBox}>
         <Image
-          source={{ uri: 'https://via.placeholder.com/50' }} // Substitua pela URL da imagem da logo
+          source={{ uri: 'https://cdn.discordapp.com/attachments/1051331857062568088/1303824208702472192/image_7.png?ex=672d286b&is=672bd6eb&hm=1f6ae409248b068651c9a3866fa3713136c1713f24fe29a03f3f8942f4bd998a&' }} // Substitua pela URL da imagem da logo
           style={styles.logo}
         />
         <View style={styles.infoTextContainer}>

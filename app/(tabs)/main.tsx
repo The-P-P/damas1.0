@@ -1,18 +1,17 @@
+// MenuScreen.tsx
 import React from 'react';
 import { Text, TouchableOpacity, StyleSheet, ScrollView } from 'react-native';
 import { FontAwesome, MaterialCommunityIcons, MaterialIcons } from '@expo/vector-icons';
-import { RootStackParamList } from '../../components/navigation/types'
 import { StackNavigationProp } from '@react-navigation/stack';
+import { RootStackParamList } from '../../components/navigation/types'; // caminho correto para o type.ts
+import { useNavigation } from '@react-navigation/native';
+
+type MenuScreenNavigationProp = StackNavigationProp<RootStackParamList, 'main'>;
+
+const MenuScreen: React.FC = () => {
+  const navigation = useNavigation<MenuScreenNavigationProp>();
 
 
-type MenuScreenNavigationProp = StackNavigationProp<RootStackParamList, 'news'>;
-
-
-type Props = {
-  navigation: MenuScreenNavigationProp;
-};
-
-const MenuScreen: React.FC<Props> = ({ navigation }) => {
   return (
     <ScrollView contentContainerStyle={styles.container}>
       <TouchableOpacity style={styles.optionButton} onPress={() => navigation.navigate('news')}>
@@ -20,42 +19,37 @@ const MenuScreen: React.FC<Props> = ({ navigation }) => {
         <Text style={styles.optionText}>Notícias</Text>
       </TouchableOpacity>
 
-      <TouchableOpacity style={styles.optionButton} onPress={() => navigation.navigate('Ranking')}>
+      <TouchableOpacity style={styles.optionButton} onPress={() => navigation.navigate('RankingScreen')}>
         <MaterialCommunityIcons name="trophy-outline" size={24} color="black" style={styles.icon} />
         <Text style={styles.optionText}>Ranking</Text>
       </TouchableOpacity>
 
-      <TouchableOpacity style={styles.optionButton} onPress={() => navigation.navigate('Torneios')}>
+      <TouchableOpacity style={styles.optionButton} onPress={() => navigation.navigate('TournamentsScreen')}>
         <MaterialCommunityIcons name="tournament" size={24} color="black" style={styles.icon} />
         <Text style={styles.optionText}>Torneios</Text>
       </TouchableOpacity>
 
-      <TouchableOpacity style={styles.optionButton} onPress={() => {}}>
-        <MaterialCommunityIcons name="gamepad-variant" size={24} color="black" style={styles.icon} />
-        <Text style={styles.optionText}>Amistosos (Em breve)</Text>
-      </TouchableOpacity>
-
-      <TouchableOpacity style={styles.optionButton} onPress={() => navigation.navigate('AulasParticulares')}>
+      <TouchableOpacity style={styles.optionButton} onPress={() => navigation.navigate('PrivateLessonsScreen')}>
         <MaterialCommunityIcons name="school-outline" size={24} color="black" style={styles.icon} />
         <Text style={styles.optionText}>Aulas Particulares</Text>
       </TouchableOpacity>
 
-      <TouchableOpacity style={styles.optionButton} onPress={() => navigation.navigate('BibliotecaDigital')}>
+      <TouchableOpacity style={styles.optionButton} onPress={() => navigation.navigate('DigitalLibraryScreen')}>
         <MaterialCommunityIcons name="book-open-outline" size={24} color="black" style={styles.icon} />
         <Text style={styles.optionText}>Biblioteca Digital</Text>
       </TouchableOpacity>
 
-      <TouchableOpacity style={styles.optionButton} onPress={() => navigation.navigate('Sobre')}>
+      <TouchableOpacity style={styles.optionButton} onPress={() => navigation.navigate('AboutScreen')}>
         <MaterialIcons name="info-outline" size={24} color="black" style={styles.icon} />
         <Text style={styles.optionText}>Sobre</Text>
       </TouchableOpacity>
 
-      <TouchableOpacity style={styles.optionButton} onPress={() => navigation.navigate('Pagamentos')}>
+      <TouchableOpacity style={styles.optionButton} onPress={() => navigation.navigate('PaymentsScreen')}>
         <FontAwesome name="money" size={24} color="black" style={styles.icon} />
         <Text style={styles.optionText}>Pagamentos</Text>
       </TouchableOpacity>
 
-      <TouchableOpacity style={styles.optionButton} onPress={() => navigation.navigate('MinhaConta')}>
+      <TouchableOpacity style={styles.optionButton} onPress={() => navigation.navigate('MyAccountScreen')}>
         <MaterialCommunityIcons name="account-outline" size={24} color="black" style={styles.icon} />
         <Text style={styles.optionText}>Minha Conta</Text>
       </TouchableOpacity>

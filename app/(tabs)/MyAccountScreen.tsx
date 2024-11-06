@@ -7,7 +7,7 @@ const ProfileScreen = () => {
       <View style={styles.profileContainer}>
         {/* Foto do usuário */}
         <Image
-          source={{ uri: 'https://via.placeholder.com/150' }} // Substitua pela URL da imagem do usuário
+          source={{ uri: 'https://cdn.discordapp.com/attachments/1051331857062568088/1303822515474268180/image.png?ex=672d26d7&is=672bd557&hm=6bac81f3fe6551cc1c55c8e96b5d7f7d8fa4502576eb316ab1193af125f7466f&' }} // Substitua pela URL da imagem do usuário
           style={styles.profileImage}
         />
         

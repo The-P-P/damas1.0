@@ -9,7 +9,7 @@ const DigitalLibraryScreen = () => {
 
       <View style={styles.bookCard}>
         <Image
-          source={{ uri: 'https://via.placeholder.com/50' }} // Substitua pela URL da imagem do livro
+          source={{ uri: 'https://cdn.discordapp.com/attachments/1051331857062568088/1303825363222134834/image_8.png?ex=672d297e&is=672bd7fe&hm=3764bae944f52e690aaf0299286f7d1ce7f12a6df7b973fb1842903943636899&' }} // Substitua pela URL da imagem do livro
           style={styles.bookImage}
         />
         <View style={styles.bookInfo}>
@@ -31,7 +31,7 @@ const DigitalLibraryScreen = () => {
 
       <View style={styles.bookCard}>
         <Image
-          source={{ uri: 'https://via.placeholder.com/50' }} // Substitua pela URL da imagem do livro
+          source={{ uri: 'https://cdn.discordapp.com/attachments/1051331857062568088/1303825363524128779/image_9.png?ex=672d297e&is=672bd7fe&hm=3543ed9801a6d9fe41e931b3ebfba1ce5b93f8e409c35b123f5e23276d63febd&' }} // Substitua pela URL da imagem do livro
           style={styles.bookImage}
         />
         <View style={styles.bookInfo}>

@@ -9,7 +9,7 @@ const PrivateLessonsScreen = () => {
 
       <View style={styles.card}>
         <Image
-          source={{ uri: 'https://via.placeholder.com/50' }} // Substitua pela URL da foto do professor
+          source={{ uri: 'https://cdn.discordapp.com/attachments/1051331857062568088/1303825857147572244/image_12.png?ex=672d29f4&is=672bd874&hm=816f4d1ab006b0ee94d0a855961b9bf41c3afcc8ccb3b222e4327dd5af56a2bf&' }} // Substitua pela URL da foto do professor
           style={styles.profileImage}
         />
         <View style={styles.infoContainer}>
@@ -30,7 +30,7 @@ const PrivateLessonsScreen = () => {
 
       <View style={styles.card}>
         <Image
-          source={{ uri: 'https://via.placeholder.com/50' }} // Substitua pela URL da foto do professor
+          source={{ uri: 'https://cdn.discordapp.com/attachments/1051331857062568088/1303825857898352640/image_11.png?ex=672d29f4&is=672bd874&hm=8f02d427452143081b4fc8625dc6384adfa3b09201d552bd1c5d792786804ec6&' }} // Substitua pela URL da foto do professor
           style={styles.profileImage}
         />
         <View style={styles.infoContainer}>
@@ -51,7 +51,7 @@ const PrivateLessonsScreen = () => {
 
       <View style={styles.card}>
         <Image
-          source={{ uri: 'https://via.placeholder.com/50' }} // Substitua pela URL da foto do professor
+          source={{ uri: 'https://cdn.discordapp.com/attachments/1051331857062568088/1303825857516929145/image_10.png?ex=672d29f4&is=672bd874&hm=7a5ff95b5b16ac9709f3f0a5269fdc041a31fb6c7e32e18a38fe41357c6961e1&' }} // Substitua pela URL da foto do professor
           style={styles.profileImage}
         />
         <View style={styles.infoContainer}>

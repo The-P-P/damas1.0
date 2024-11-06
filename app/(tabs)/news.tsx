@@ -26,7 +26,7 @@ const NewsScreen = () => {
       {/* Lista de Notícias */}
       <View style={styles.newsCard}>
         <Image
-          source={{ uri: 'https://via.placeholder.com/100' }} // Substitua pela URL da imagem da notícia
+          source={require('../../assets/images/banner.png')} // Substitua pela URL da imagem da notícia
           style={styles.newsImage}
         />
         <View style={styles.newsInfo}>
@@ -43,7 +43,7 @@ const NewsScreen = () => {
 
       <View style={styles.newsCard}>
         <Image
-          source={{ uri: 'https://via.placeholder.com/100' }} // Substitua pela URL da imagem da notícia
+           source={require('../../assets/images/banner (1).png')} // Substitua pela URL da imagem da notícia
           style={styles.newsImage}
         />
         <View style={styles.newsInfo}>
